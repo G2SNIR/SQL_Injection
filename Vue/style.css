@@ -30,6 +30,15 @@ nav {
     background-color: cadetblue;
 }
 
+#div_pseudo, #div_deconnexion {
+    display: inline-block;
+    padding-right: 15px;
+    float: right;
+    width: auto;
+    color: white;
+}
+
+
 section {
     min-height: 80vh;
 }
@@ -47,6 +56,12 @@ section h2 {
 section p {
     padding: 0.5vh 0vh 0.5vh 40px;
     font-size: 1em;
+}
+
+section p.erreur {
+    width: 100%;
+    text-align: center;
+    color: darkred;
 }
 
 /*** Les zones de code ***/
@@ -80,11 +95,11 @@ input, button, textarea {
 }
 
 
-button:hover {
+input[type=button]:hover {
     background-color: rgb(48, 90, 91);
 }
 
-button {
+input[type=button] {
     background-color: cadetblue;
     color: white;
     font-size: 1.2em;

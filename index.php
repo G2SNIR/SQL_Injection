@@ -1,34 +1,44 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <title>Injection SQL</title>
-</head>
-<body>
-    <header>
-        <h1>Mon p'ti blog</h1>
-    </header>
-    <nav>
+<?php
+// Le controleur vérifie si l'état de la session
+error_reporting(E_ALL);
+ini_set("display_errors",1);
 
-    </nav>
-    <section>
-        <h2>Authentifiez-vous pour accéder au contenu : </h2>
-        <form action="traitement.php" method="post">
-            <label>Entrez votre pseudo : </label>
-            <input type="text" name="inputtextpseudo">
-            <label>Entrez votre mot de passe : </label>
-            <input type="password" name="inputpasswordmdp">
-            <button type="submit" name="buttonsubmit">Envoyer</button>
-        </form>
-    </section>
-    <footer>
-        <p>@ BTS CIEL IR : Design for testing SQL Injection.</p>
-    </footer>
-    <script src="login.js"></script>
-</body>
-</html>
+
+session_start();
+
+
+include("Controleur/controleur.php");
+
+// On dirige l'utilisateur vers la page de login 
+//    1 - L'utilisateur n'est pas authentifié et
+//    2 - Si la page demandée est login, ou rien
+if(!isset($_SESSION["pseudo"]) && (!isset($_GET["page"]) || $_GET["page"]=="login" || $_GET["page"]=="") ) 
+{
+    page_login();
+}
+
+else if($_GET["page"]=="blog") 
+{
+    page_blog();
+    //echo "Formulaire login";
+}
+
+else if($_GET["page"]=="logout") 
+{
+    deconnexion();
+    //echo "Formulaire login";
+}
+
+else if($_GET["page"]=="form_login") 
+{
+    form_login();
+    //echo "Formulaire login";
+}
+
+else if($_GET["page"]=="form_blog") 
+{
+    form_blog();
+    //echo "Formulaire login";
+}
+
+//print_r($_GET);
