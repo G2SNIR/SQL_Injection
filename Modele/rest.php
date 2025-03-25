@@ -1,8 +1,5 @@
 <?php
-/********************************************************************************
- *              Récupération des données de sessions                *
- *******************************************************************/
-session_start();
+
 
 /********************************************************************************
  *                              DATABASE CONNECTION                             *
@@ -24,6 +21,7 @@ try {
     $pdo = new PDO('mysql:host='.$dbhost.';port='.$dbport.';dbname='.$db.'', $dbuser, $dbpasswd);
 } catch (PDOException $e) {
     $reponse = array("status" => "error", "description" => "Database is not available.");
+    echo json_encode($reponse);
     die();
 }
 
@@ -68,10 +66,6 @@ if(     $_SERVER["REQUEST_METHOD"] == "POST"    &&
         isset($data["input_password_mdp"]) )
 {
     $reponse = array("status" => "error", "description" => "Login rejected.");
-    // $sql_request = "SELECT id_utilisateur FROM utilisateur WHERE pseudo=? AND mdp=?";
-    // $prepared_request = $pdo->prepare($sql_request);
-    // $prepared_request->bindParam(1, $data["input_text_pseudo"]);
-    // $prepared_request->bindParam(2, $data["input_password_mdp"]);
     $sql_request = "SELECT id_utilisateur,pseudo FROM utilisateur WHERE pseudo='".$data["input_text_pseudo"]."' AND mdp='".$data["input_password_mdp"]."'";
     $prepared_request = $pdo->prepare($sql_request);
     $prepared_request->execute();
@@ -79,19 +73,9 @@ if(     $_SERVER["REQUEST_METHOD"] == "POST"    &&
     //print_r($result);
     if(count($result) == 1) {
         $reponse = array("status" => "ok", "description" => "Login accepted.", "pseudo" => $result[0]["pseudo"]);
-        $_SESSION["pseudo"] = $result[0]["pseudo"];
     }
     echo json_encode($reponse);
 }
 
-else if(isset($_GET["deconnexion"]))
-{
-    $reponse = array("status" => "ok", "description" => "You are disconnected.");
-    session_destroy();
-    echo json_encode($reponse);
-}
-
-
-//header("Location: index.php");
 
 ?>

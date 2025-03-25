@@ -58,7 +58,7 @@ function form_login() {
     if(isset($reponse["status"]) && $reponse["status"] == "ok") {
         //echo "Login correct ! ";
         // Création de la variable de session "pseudo"
-        $_SESSION["pseudo"] = $_POST["input_text_pseudo"];
+        $_SESSION["pseudo"] = $reponse["pseudo"];
         header("Location: index.php?page=blog");
     }
     else {

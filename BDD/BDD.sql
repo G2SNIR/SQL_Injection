@@ -18,4 +18,4 @@ CREATE TABLE IF NOT EXISTS utilisateur (
     PRIMARY KEY(id_utilisateur)
 );
 
-INSERT INTO utilisateur(pseudo, mdp) VALUES ('jean','jean1');
+INSERT INTO utilisateur(pseudo, mdp) VALUES ('jean','jean1'),('emilie','emilie1'),('john','john1');
