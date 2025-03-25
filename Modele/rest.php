@@ -71,9 +71,7 @@ if(     $_SERVER["REQUEST_METHOD"] == "POST"    &&
     $prepared_request->execute();
     $result = $prepared_request->fetchAll(PDO::FETCH_ASSOC);
     //print_r($result);
-    if(count($result) == 1) {
-        $reponse = array("status" => "ok", "description" => "Login accepted.", "pseudo" => $result[0]["pseudo"]);
-    }
+    $reponse = array("status" => "ok", "description" => "Login accepted.", "pseudo" => $data["input_text_pseudo"]);
     echo json_encode($reponse);
 }
 
