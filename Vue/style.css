@@ -95,11 +95,11 @@ input, button, textarea {
 }
 
 
-input[type=button]:hover {
+button:hover {
     background-color: rgb(48, 90, 91);
 }
 
-input[type=button] {
+button {
     background-color: cadetblue;
     color: white;
     font-size: 1.2em;

@@ -68,16 +68,18 @@ if(     $_SERVER["REQUEST_METHOD"] == "POST"    &&
         isset($data["input_password_mdp"]) )
 {
     $reponse = array("status" => "error", "description" => "Login rejected.");
-    $sql_request = "SELECT id_utilisateur FROM utilisateur WHERE pseudo=? AND mdp=?";
+    // $sql_request = "SELECT id_utilisateur FROM utilisateur WHERE pseudo=? AND mdp=?";
+    // $prepared_request = $pdo->prepare($sql_request);
+    // $prepared_request->bindParam(1, $data["input_text_pseudo"]);
+    // $prepared_request->bindParam(2, $data["input_password_mdp"]);
+    $sql_request = "SELECT id_utilisateur,pseudo FROM utilisateur WHERE pseudo='".$data["input_text_pseudo"]."' AND mdp='".$data["input_password_mdp"]."'";
     $prepared_request = $pdo->prepare($sql_request);
-    $prepared_request->bindParam(1, $data["input_text_pseudo"]);
-    $prepared_request->bindParam(2, $data["input_password_mdp"]);
     $prepared_request->execute();
     $result = $prepared_request->fetchAll(PDO::FETCH_ASSOC);
     //print_r($result);
     if(count($result) == 1) {
-        $reponse = array("status" => "ok", "description" => "Login accepted.", "pseudo" => $data["input_text_pseudo"]);
-        $_SESSION["pseudo"] = $data["input_text_pseudo"];
+        $reponse = array("status" => "ok", "description" => "Login accepted.", "pseudo" => $result[0]["pseudo"]);
+        $_SESSION["pseudo"] = $result[0]["pseudo"];
     }
     echo json_encode($reponse);
 }
