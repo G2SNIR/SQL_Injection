@@ -41,7 +41,7 @@ Rester dans le répertoire /var/www/html et taper la commande :
 
 Modifier les droits sur le fichier commentaires.json comme suit :
 
-    sudo chmod o+rw Modele/commentaires.json
+    sudo chmod o+rw SQL_Injection/Modele/commentaires.json
 
 ## Accès au site web
 

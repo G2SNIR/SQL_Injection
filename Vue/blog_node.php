@@ -34,7 +34,7 @@
                 echo  "<p class=\"commentaire\">" . $uncommentaire["commentaire"] . "</p><p></p>";
             }
         ?>
-        <h2>Lancez-vous, postez votre commentaire : </h2>
+        <h2 id="h2_form">Lancez-vous, postez votre commentaire : </h2>
         <form action="index.php?page=form_blog" method="post">
             <label>Entrez votre pseudo : </label>
             <input type="text" name="input_text_pseudo">
