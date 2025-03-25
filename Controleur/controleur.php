@@ -54,7 +54,7 @@ function form_login() {
         }
     }
     curl_close($ch);
-    print_r($reponse);
+    //print_r($reponse);
     if(isset($reponse["status"]) && $reponse["status"] == "ok") {
         //echo "Login correct ! ";
         // Création de la variable de session "pseudo"
