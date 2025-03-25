@@ -36,10 +36,10 @@ function form_login() {
     curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($_POST));
     // Execute the cURL request and store the response
     $reponse_text = curl_exec($ch);
-    echo $reponse_text;
+    //echo $reponse_text;
     // S'il y a une erreur dans la communication avec l'API REST
     if (curl_errno($ch)) {
-        echo 'cURL Error: ' . curl_error($ch);
+        //echo 'cURL Error: ' . curl_error($ch);
         $reponse = array("status" => "error", "description" => "Impossible de joindre l'API REST.");
     }
     else {
@@ -48,15 +48,15 @@ function form_login() {
             $reponse = array("status" => "error", "description" => "Impossible de joindre l'API REST.");
         }
         else {  // On décode la réponse qui est au format json 
-            echo "Réponse non vide";
+            //echo "Réponse non vide";
             $reponse = json_decode($reponse_text, true);  // true : renvoie un tableau associatif
-            print_r($reponse);
+            //print_r($reponse);
         }
     }
     curl_close($ch);
     print_r($reponse);
     if(isset($reponse["status"]) && $reponse["status"] == "ok") {
-        echo "Login correct ! ";
+        //echo "Login correct ! ";
         // Création de la variable de session "pseudo"
         $_SESSION["pseudo"] = $_POST["input_text_pseudo"];
         header("Location: index.php?page=blog");
@@ -80,9 +80,9 @@ function deconnexion() {
 }
 
 function form_blog() {
-    print_r($_POST);
+    //print_r($_POST);
     ajouter_commentaire($_POST["input_text_pseudo"], $_POST["input_text_commentaire"]);
-    //header("Location: index.php?page=blog");
+    header("Location: index.php?page=blog");
 }
 
 ?>

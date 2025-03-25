@@ -26,12 +26,22 @@ Il est nécessaire d'exécuter ce script pour mettre en place la base de donnée
 
 ### Installation de la BDD sur Windows :
 
+Déplacer vous dans le répertoire d'installation de mysql dans XAMPP.
+
     mysql -u root
     mysql> source ../../SQL_Injection/BDD.sql
 
 ### Installation de la BDD sur Linux :
 
-    sudo mysql < SQL_Injection/BDD.sql
+Rester dans le répertoire /var/www/html et taper la commande :
+
+    sudo mysql < SQL_Injection/BDD/BDD.sql
+
+## ETAPE 3 : Uniquement pour les serveurs sous Linux
+
+Modifier les droits sur le fichier commentaires.json comme suit :
+
+    sudo chmod o+rw Modele/commentaires.json
 
 ## Accès au site web
 
