@@ -82,7 +82,7 @@ function deconnexion() {
 function form_blog() {
     print_r($_POST);
     ajouter_commentaire($_POST["input_text_pseudo"], $_POST["input_text_commentaire"]);
-    header("Location: index.php?page=blog");
+    //header("Location: index.php?page=blog");
 }
 
 ?>
