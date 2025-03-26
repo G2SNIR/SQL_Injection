@@ -12,6 +12,7 @@ Se déplacer dans le répertoire /var/www/html :
 
     cd /var/www/html
 
+
 Puis taper la commande :
 
     git clone https://github.com/G2SNIR/SQL_Injection.git
@@ -50,3 +51,4 @@ Modifier les droits sur le fichier commentaires.json comme suit :
 ## Accès au site web
 
 Utiliser votre navigateur et connectez-vous au site web en ajoutant /SQL_Injection après votre adresse IP.
+
