@@ -19,8 +19,8 @@ function page_blog() {
     include("Vue/ossature.php");
 }
 
-function page_tuto() {
-    $section_principale = "page_tuto.php";
+function page_mvc() {
+    $section_principale = "page_mvc.php";
     include("Vue/ossature.php");
 }
 

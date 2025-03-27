@@ -16,14 +16,16 @@
     <nav>
         <?php if(isset($_SESSION["pseudo"])) { ?>
         <div class="menu"><a href="index.php?page=blog">Blog Node JS</a></div>
-        <div class="menu"><a href="index.php?page=tuto">Tuto</a></div>
+        <div class="menu"><a href="index.php?page=mvc">MVC</a></div>
         <?php } ?>
         <div class="menu" id="div_pseudo"><?php if(isset($_SESSION["pseudo"])) echo $_SESSION["pseudo"]; ?></div>
         <div class="menu" id="div_deconnexion"><a href="index.php?page=logout"><?php if(isset($_SESSION["pseudo"])) echo "Se déconnecter"; ?></a></div>
     </nav>
+    <section>
         <?php include($section_principale); ?>
+    </section>
     <footer>
-        <p>@ BTS CIEL IR : Design for testing SQL Injection.</p>
+        <p>@ BTS CIEL IR : Design for testing SQL Injections and XSS Attacks.</p>
     </footer>
 </body>
 </html>

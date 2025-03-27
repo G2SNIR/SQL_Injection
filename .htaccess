@@ -4,5 +4,5 @@ RewriteEngine on
 # RewriteRule ^about$ about.html [NC]
 
 # réécriture de index/login ou index en routage.php?page=login
-RewriteRule ^index.php/([A-Za-z0-9]+) index.php?page=$1
+# RewriteRule ^index.php/([A-Za-z0-9]+) index.php?page=$1
 
