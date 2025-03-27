@@ -1,14 +1,1 @@
-{
-    "commentaire": [
-        {
-            "pseudo": "prof",
-            "date": "2025-03-17 06:59:00",
-            "commentaire": "Super tutoriel ! "
-        },
-        {
-            "pseudo": "Emile",
-            "commentaire": "Mon commentaire est tr\u00e8s important, vous devez donc le suivre !",
-            "date": "2025-03-18 11:05:34"
-        }
-    ]
-}
+{"commentaire":[{"pseudo":"prof","date":"2025-03-17 06:59:00","commentaire":"Super tutoriel ! "},{"pseudo":"Emile","commentaire":"Mon commentaire est tr\u00e8s important, vous devez donc le suivre !","date":"2025-03-18 11:05:34"},{"pseudo":"jean","commentaire":"test","date":"2025-03-26 18:20:14"}]}

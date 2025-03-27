@@ -12,6 +12,14 @@ Se déplacer dans le répertoire /var/www/html :
 
     cd /var/www/html
 
+Vérifier le propiétaire du répertoire html en tapant la commande :
+
+    ls -al
+
+Si le proriétaire et le groupe de ce répertoire sont root, vous allez vous en attribuer la propriété en tapant (cielir est le nom du nouveau propriétaire) :
+
+    chown -R cielir .
+    chgrp -R cielir .
 
 Puis taper la commande :
 

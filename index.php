@@ -23,6 +23,12 @@ else if($_GET["page"]=="blog")
     //echo "Formulaire login";
 }
 
+else if($_GET["page"]=="tuto") 
+{
+    page_tuto();
+    //echo "Formulaire login";
+}
+
 else if($_GET["page"]=="logout") 
 {
     deconnexion();

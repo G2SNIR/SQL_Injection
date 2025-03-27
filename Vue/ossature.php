@@ -14,8 +14,12 @@
         <h1>Mon p'ti blog</h1>
     </header>
     <nav>
-        <div id="div_pseudo"><?php if(isset($_SESSION["pseudo"])) echo $_SESSION["pseudo"]; ?></div>
-        <div id="div_deconnexion"><a href="index.php?page=logout"><?php if(isset($_SESSION["pseudo"])) echo "Se déconnecter"; ?></a></div>
+        <?php if(isset($_SESSION["pseudo"])) { ?>
+        <div class="menu"><a href="index.php?page=blog">Blog Node JS</a></div>
+        <div class="menu"><a href="index.php?page=tuto">Tuto</a></div>
+        <?php } ?>
+        <div class="menu" id="div_pseudo"><?php if(isset($_SESSION["pseudo"])) echo $_SESSION["pseudo"]; ?></div>
+        <div class="menu" id="div_deconnexion"><a href="index.php?page=logout"><?php if(isset($_SESSION["pseudo"])) echo "Se déconnecter"; ?></a></div>
     </nav>
         <?php include($section_principale); ?>
     <footer>
