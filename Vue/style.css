@@ -74,6 +74,11 @@ section p.erreur {
     color: darkred;
 }
 
+section ul {
+    padding: 0.5vh 0vh 0.5vh 80px;
+    font-size: 1em;
+}
+
 /*** Les zones de code ***/
 pre {
     margin: 10px 40px;
